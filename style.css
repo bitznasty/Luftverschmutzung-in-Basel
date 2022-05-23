@@ -2,6 +2,12 @@
     display: block;
 }
 
+.fact{
+    padding: 5px;;
+    border-style: solid;
+    border-width: 1px;
+}
+
 .clearfix:after {
     content: ".";
     display: block;
@@ -53,6 +59,13 @@ body {
 body.pollutant-all .color,
 body.pollutant-all a {
     color: #4292c6;
+}
+
+body.pollutant-all .fact {
+    padding: 5px;;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #4292c6;
 }
 
 body.pollutant-all .color:hover,
@@ -595,7 +608,7 @@ footer .content p {
 background-color: white;
 }
 
-#dokumentation, #interpretation, #uberdieseapp, #visual {
+#dokumentation, #interpretation, #uberdieseapp, #visual, #shortFacts {
     padding-top: 30px;
 }
 
@@ -614,4 +627,7 @@ table, th, td {
     border-collapse: collapse;
 }
     
-    
+.bildunterschrift {
+    text-align: end;
+    padding-bottom: 20px;
+}
