@@ -34,6 +34,9 @@
           <a class="nav-link" href="#interpretation">Interpretation</a>
         </li>
         <li class="nav-item active">
+          <a class="nav-link" href="#shortFacts">Short Facts</a>
+        </li>
+        <li class="nav-item active">
           <a class="nav-link" href="#uberdieseapp">Über diese App</a>
         </li>
       </ul>
@@ -101,7 +104,8 @@
       <p>Die Heatmap stellt die Messwerte der letzten vier Wochen je Stunde dar. Diese Visualisierung dient zur
         Darstellung der einzelnen Messwerte. Die Farbe der jeweiligen Tiles sind nach dem Kurzzeit-Belastungs-Index
         skaliert. Wird mit der Maus über ein Tile gefahren, so wird das Datum, die Uhrzeit und der Messwert in einem
-        Tooltip angezeit. Ist der Filter <i>Alle Schadstoffe</i> aktiv, so wird der KBI als Messwert angzeigt. Ansonsten
+        Tooltip angezeig t. Ist der Filter <i>Alle Schadstoffe</i> aktiv, so wird der KBI als Messwert angezeigt.
+        Ansonsten
         ist der Messwert bei <i>Alle Messstandorte</i> der Durchschnitt der Messwerte des jeweiligen Schadstoffs oder
         bei einem aktiven Filter von einem Standort der jeweilige Messwert angezeigt. Messwerte, welche keinen Wert
         haben, werden schwarz dargestellt. Beispiele:</p>
@@ -138,7 +142,7 @@
 
       <h3 id="data">Farben</h3>
       <p>Jeder Schadstoff ist mit einer Farbe verbunden, welche das Layout der Visualisierung bestimmt. Alle Schadstoffe
-        haben die Farbe <span style="color: rgb(66, 146, 198);">blau</span>, NO<sub>2</sub> <span
+        haben die Farbe <span style="color: rgb(66, 146, 198);">blau</span>, NO<sub>2</sub><span
           style="color: rgb(65, 171, 93);">grün</span> , O<sub>3</sub> <span
           style="color: rgb(128, 125, 186);">violett</span> und PM<sub>2.5</sub> <span
           style="color: rgb(239, 59, 44);">orange</span>. </p>
@@ -149,7 +153,10 @@
           href="https://data.bs.ch/explore/dataset/100178/information/?sort=timestamp">Luftqualität
           Vergleichsmessungen</a>. Die Daten werden vom Kanton Basel-Stadt in Rahmen des Projekts <i>Smarte Strasse</i>
         auf ihrem <a href="https://data.bs.ch/pages/home/">Datenportal</a> zur Verfügung gestellt. Die App greift über
-        eine API-Schnittstelle auf die Daten zu und lädt die alle Daten der letzten sechs Monate. Das Projekt <i>Smarte
+        eine API-Schnittstelle auf die Daten zu und lädt alle Daten der letzten sechs Monate. Es liegen für jede halbe
+        Stunde Messungen vor. Für die Visualisierung wurden jedoch nur die Messwerte der vollen Stunden verwendet, weil
+        der KBI auf Stundenwerte angewiesen ist.</p>
+      <p>Das Projekt <i>Smarte
           Strasse</i> testet kosteneffizeinte Mikrosensoren auf ihre Genauigkeit und Zuverlässigkeit. Der installierte
         Sensor vom Typ "Nubo" der Firma Sensirion AG ist in der Lage, die Konzentration verschiedener Schadstoffe in der
         Luft in Echtzeit zu ermitteln. Gemessen werden die Gehalte der Gase Stickstoffdioxid (NO<sub>2</sub>) und Ozon
@@ -157,13 +164,15 @@
 
       <h3 id="data">Schadstoffe</h3>
       <p>Für die Messung der Luftqualität werden die Schadstoffe NO<sub>2</sub>, O<sub>3</sub> und PM<sub>2.5</sub>
-        gemessen. Das Swiss Tropical and Health Institute zeigt in einer <a
-          href="https://www.swisstph.ch/de/projects/ludok/healtheffects/">interaktiven App</a> die Auswirkungen der
-        Luftverschmutzung auf die Gesundheit. Es kann dort zwischen Kurz- und Langzeit sowie den entsprechenden
+        gemessen. Im Folgendem werden diese genauer beschrieben. Für ausführlichere Angaben bezüglich Auswirkungen der
+        Luftverschmutzung auf die Gesundheit hat das Swiss Tropical and Health Institute eine <a
+          href="https://www.swisstph.ch/de/projects/ludok/healtheffects/">interaktive App</a> entwickelt. Dort kann
+        zwischen Kurz- und Langzeit sowie den entsprechenden
         Schadstoffen ausgewählt werden.</p>
       <h4 id="data">NO<sub>2</sub></h4>
       <p>Stickstoffdioxid (NO<sub>2</sub>) entsteht beim Verbrennen von Brenn- und Treibstoffen, insbesondere bei hohen
-        Verbrennungstemperaturen. Hauptquelle von Stickstoffdioxidausstösse ist der Strassenverkehr. Sticko ist eine
+        Verbrennungstemperaturen. Hauptquelle von Stickstoffdioxidausstösse ist der Strassenverkehr. Stickstoffdioxid
+        ist eine
         wichtige Vorläufersubstanz für die Bildung von sauren Niederschlägen, sekundärem Feinstaub und - zusammen mit
         flüchtigen organischen Verbindungen (VBO) - von Sommersmog (<a
           href="https://www.umweltberichtbeiderbasel.bs.ch/indikatoren/indikatoren-uebersicht/11-luft/stickstoffdioxid-immissionen.html">Quelle</a>).
@@ -193,7 +202,7 @@
       <p>Die sekundären Partikel bilden sich erst in der Luft aus gasförmigen Vorläuferschadstoffen wie Schwefeldioxi,
         Stickoxide, Ammoniak oder flüchtige organische Verbindungen (VOC). Besonders im Winter leiden Städte und
         verkehrsnahe Gebiete unter zu hohen Feinstaubbelastungen.</p>
-      <p>Feinstaub wird in drei verschiedene grössen eingeteilt (<a href="https://feinstaub.ch/">Quelle</a>):</p>
+      <p>Feinstaub wird in drei verschiedene Grössen eingeteilt (<a href="https://feinstaub.ch/">Quelle</a>):</p>
       <ul>
         <li>ultrafeine Partikel (PM<sub>0.1</sub>)</li>
         <li>feine Partikel (PM<sub>2.5</sub>)</li>
@@ -289,9 +298,70 @@
       <p>Das Stacked Radial Area Chart verdeutlicht, dass die drei Schadstoffemmissionen zur Hauptverkehrszeit am Morgen
         und am Abend am Höchsten sind. Morgens fällt der Peak höher aus als Abends. Eine mögliche Erklärung dafür liegt
         in der Annahme, dass am Morgen die meisten Leute zur gleichen Zeit zur Arbeit fahren, während sich am Abend die
-        Menge auf mehrere Stunden verteilt. Der Schadstoff NO<sub>2</sub> zeigt dabei die grössten Ausschläge. Wie bereits in der Dokumentation der Schadstoffe erkärt, entsteht NO<sub>2</sub> hauptsächlich bei Verbrennen von Brenn- und Treibstoffen. Diese Verbrennung findet somit zur Hauptverkerhszeit statt. </p>
-      <p>In der Hetamap ist dabei ersichtlich, dass die Emmissionswerte nie über den KBI-Index von 3 (deutliche Belastung) steigt. Diese Erkenntnis </p>
-      <p>Interpretation der KBI-Werte anhand eines Beispieltages</p>
+        Menge auf mehrere Stunden verteilt. Der Schadstoff NO<sub>2</sub> zeigt dabei die grössten Ausschläge. Wie
+        bereits in der Dokumentation der Schadstoffe erkärt, entsteht NO<sub>2</sub> hauptsächlich bei Verbrennen von
+        Brenn- und Treibstoffen. Diese Verbrennung findet somit zur Hauptverkehrszeit statt. Der Schadstoff
+        O<sub>3</sub> hingegen zeigt eine gegenläufige Tendenz, d.h. er nimmt nach der Hauptverkehrszeit am Morgen zu
+        und nimmt auf die Nacht hin wieder ab. Dieses Verhalten geht vor allem auf das Sonnenlicht zurück. Je stärker
+        die Sonne scheint, desto mehr Ozon wird gebildet. Die Immissionen des Schadstoffs PM<sub>2.5</sub> unterliegen
+        praktisch keinen Schwankungen über den Tag. Ihre Immissionswerte sind konstant über den Tag verteilt.</p>
+
+      <p>Interessant ist Aufschlüsselung nach den Standorten. So ist zu erkennen, dass an der Autobahn A2 Hard die
+        Stickstoffdioxid-Immissionen während den Hauptverkehrszeiten fast immer zwischen mässig und deutlich liegen, wo
+        hingegen die Immissionen an der Gundeldingerstrasse auch zu Hauptverkehrszeiten fast nie über gering gehen. Dies
+        zeigt den starken Zusammenhang, welcher der Verkehr auf die Luftverschmutzung hat. </p>
+
+      <p>In der Hetamap ist ersichtlich, dass die Immissionswerte nie über den KBI-Index von 3 (deutliche
+        Belastung) steigt. Diese doch erfreuliche Erkenntnis ist jedoch mit Vorsicht zu geniessen. Wie im Kapitel KBI
+        angetönt, wird bei der Luftverschmutzung zwischen Kurz- und Langzeitbelastung unterschieden. Die in dieser
+        Visualisierung verwendete Kurzzeitbelastung hat
+        viel höhere Grenzwerte als die Langzeitbelastung.
+        Die Abbildungen 1, 2 und 3 zeigen den Verlauf der Langzeitbelastung von Feinstaub, Stickstoffdioxid und Ozon in
+        der ganzen Schweiz (<a
+          href="https://www.bafu.admin.ch/dam/bafu/de/dokumente/luft/uz-umwelt-zustand/luftqualitaet-2019.pdf.download.pdf/de_BAFU_UZ-2020_NABEL-Bericht_bf.pdf">Quelle</a>).
+      </p>
+      <img src="img/pm2_5.png" alt="Bild kkonnte nicht geladen werden" width="100%">
+      <p class="bildunterschrift">Abbildung 1: Feinstaubbelastung von 1998 - 2019</p>
+      <img src="img/stickstoffdioxid.png" alt="Bild konnte nicht geladen weden" width="100%">
+      <p class="bildunterschrift">Abbildung 2: Stickstoffdioxidbelastung von 1986 - 2019</p>
+      <img src="img/ozon.png" alt="Bild konnte nicht geladen werden" width="100%">
+      <p class="bildunterschrift">Abbildung 3: Ozonbelastung von 1989 - 2019</p>
+      <p>Bei der Betrachtung der Langzeitbelastung ist beim Feinstaub zu erkennen, dass die Werte über die Zeit gesunken
+        sind und nun nah bzw. unter dem
+        Grenzwert liegen. Das Gleiche gilt für Stickstoffdioxid, wobei hier nur die Messstationen in der Stadt und nahe
+        dem Verkehr noch über dem Grendwert liegen. Ein ganz anderes Bild zeigt der Verlauf der Ozonbelastung. Diese hat
+        sich über die Jahre immer wieder mit starken Ausreissern ausgezeichnet. Es ist keine Abnahme der Belastung über
+        die Zeit zu erkennen. Bei Feinstaub und Stickstoffdioxid sind die Messwerte in der Stadt höher als auf dem Land.
+        Beim Ozon ist das Gegenteil zu erkennen. Dieser Unterschied ist auf die im Kapitel O<sub>3</sub> beschriebene
+        Charakteristiken zurückzuführen, da Ozon vor allem aus VOC, NO<sub>2</sub> und der Sonneneinstrahlung gebildet
+        wird. Die Topografie der Stadt hat einen negativen Einfluss auf die Strahlungskraft der Sonne und somit auch auf
+        die Ozonbildung.</p>
+      <p></p>
+
+      
+
+
+      <div id="shortFacts"></div>
+      <h2 id="data">Short Facts Luftverschmutzung</h2>
+      <p class="fact">Luftverschmutzung verursacht in der Schweiz laut Studien jährlich externe, nicht vom Verursacher
+        gedeckte Folgekosten in Milliardenhöhe. <a href="https://www.are.admin.ch/kosten-nutzen">Link</a></p>
+      <p class="fact">Wegen Luftschadstoff bedingten Atemwegs- und Herz-Kreislauferkrankungen werden in der Schweiz
+        jährlich ca. 14'000 Tage im Spital verbracht. <a
+          href="https://www.bafu.admin.ch/bafu/de/home/themen/luft/fachinformationen/auswirkungen-der-luftverschmutzung/auswirkungen-der-luftverschmutzung-auf-die-gesundheit.html">Link</a>
+      </p>
+      <p class="fact">Die Gesundheit von Kindern und Erwachsenen kann relativ rasch verbessert werden, wenn der
+        Schadstoffgehalt der Luft abnimmt. Massnahmen zur Verbesserung der Luftqualität haben also einen messbaren
+        positiven Einfluss auf die Volksgesundheit. <a
+          href="https://www.bafu.admin.ch/bafu/de/home/themen/luft/fachinformationen/auswirkungen-der-luftverschmutzung/auswirkungen-der-luftverschmutzung-auf-die-gesundheit.html">Link</a>
+      </p>
+      <p class="fact">Eine für das Jahr 2018 aktualisierte Studie des Bundesamts für Raumentwicklung ARE kommt zum
+        Ergebnis, dass wegen der Luftverschmutzung (durch PM10) in der Schweiz jährlich rund 2'300 Personen vorzeitig
+        sterben, dabei gehen 23'600 Lebensjahre verloren. <a
+          href="https://www.bafu.admin.ch/bafu/de/home/themen/luft/fachinformationen/auswirkungen-der-luftverschmutzung/auswirkungen-der-luftverschmutzung-auf-die-gesundheit.html">Link</a>
+      </p>
+      <p class="fact">Bangladesch ist das Land mit der weltweit höchste Luftverschmutzung. Die Schweiz steht an 87.
+        Stelle. <a href="https://www.iqair.com/ch/world-most-polluted-countries">Link</a>
+      </p>
 
       <div id="uberdieseapp"></div>
       <h2 id="data">Über diese App</h2>
