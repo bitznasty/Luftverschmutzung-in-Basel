@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Visualisierung der Luftverschmutzung in Basel</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <meta name="description"
+    content="Visualization of the intensity distribution of several major pollutants in Beijing over two weeks">
+  <link href="style.css" rel="stylesheet">
+  <link rel="canonical" href="http://scottcheng.github.com/bj-air-vis/">
+</head>
+
+<body>
+  <!--Navbar-->
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#visual">Visualisierung</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#dokumentation">Dokumentation</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#interpretation">Interpretation</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#uberdieseapp">Über diese App</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <header>
+    <div class="content">
+      <h1>Visualisierung der Luftverschmutzung in <span class="color">Basel</span></h1>
+      <p class="author">Von <span class="color">Andy Ritz</span></p>
+    </div>
+  </header>
+  <section id="vis">
+    <div id="visual"></div>
+    <div class="content">
+      <div id="loading">Die aktuellen Daten werden gerade vom Datenportal des Kantons Basel-Stadt geladen...</div>
+      <div id="stations">
+
+        <div id="map-wrapper">
+          <h2 id="station-name2"></h2>
+          <svg class="map"></svg>
+        </div>
+        <!--id="map-wrapper"-->
+        <div id="station">
+          <h2 id="station-name"></h2>
+          <div id="radial-wrapper"><svg class="radial" width="418"></svg></div>
+
+        </div>
+
+        <div id="div_template">
+          <h2 id="station-name3"></h2>
+          <svg id="tiles-wrapper" class="tiles"></svg>
+        </div>
+        <!--id="tiles-wrapper"-->
+      </div>
+      <div id="pollutant-selector"></div>
+    </div>
+  </section>
+  <div id="ix-hint">
+    <p>Versuchen Sie auf einen Standort in der Map, einer Ebene im Stacked Area Chart oder auf einen Schadstoff in der
+      Auswahlliste zu drücken.</p>
+  </div>
+  <section id="write-up">
+    <div class="content">
+
+      <div id="dokumentation"></div>
+      <h2 id="data">Dokumentation</h2>
+      <h3 id="data">Beschreibung</h3>
+      <p>Die App dient zur Visualisierung der Luftverschmutzung in Basel (CH). Die App bildet drei verschiedene
+        Visualisierungen ab: Map, Stacked Radial Area Chart und eine Heatmap.</p>
+
+      <h4 id="data">Map</h4>
+      <p>Die Map zeigt die Live-Messdaten aller sechs Standorte des Projekts <i>Smarte Strasse</i> in der Stadt Basel.
+        Der Zeitpunkt der Daten wird rechts unten angezeigt. Die Kreise sind nach dem Kurzzeit-Belastungs-Index
+        skaliert. </p>
+
+      <h4 id="data">Stacked Radial Area Chart</h4>
+      <p>Der Stacked Radial Area Chart stellt die gesamten Messwerte auf den Tag aufgeschlüsselt dar (letzten sechs
+        Monate). Dieser Graph dient
+        zur Darstellung der längerfristigen Entwicklung der Messwerte über den vollen Zeitrahmen. Es werden die
+        absoluten Werte dargestellt. Jeder Ring steht für einen Schadstoff.</p>
+
+      <h4 id="data">Heatmap</h4>
+      <p>Die Heatmap stellt die Messwerte der letzten vier Wochen je Stunde dar. Diese Visualisierung dient zur
+        Darstellung der einzelnen Messwerte. Die Farbe der jeweiligen Tiles sind nach dem Kurzzeit-Belastungs-Index
+        skaliert. Wird mit der Maus über ein Tile gefahren, so wird das Datum, die Uhrzeit und der Messwert in einem
+        Tooltip angezeit. Ist der Filter <i>Alle Schadstoffe</i> aktiv, so wird der KBI als Messwert angzeigt. Ansonsten
+        ist der Messwert bei <i>Alle Messstandorte</i> der Durchschnitt der Messwerte des jeweiligen Schadstoffs oder
+        bei einem aktiven Filter von einem Standort der jeweilige Messwert angezeigt. Messwerte, welche keinen Wert
+        haben, werden schwarz dargestellt. Beispiele:</p>
+      <ul>
+        <li>Filter <i>Alle Messstandorte</i> und <i>Alle Schadstoffe</i>: Messwert = höchster KBI der jeweiligen Stunde
+          aller Messstandorte</li>
+        <li>Filter <i>Alle Messstandorte</i> und <i>PM<sub>2.5</sub></i>: Messwert = Durchschnitt aller Messstandorte
+          von PM<sub>2.5</sub> der jeweiligen Stunde</li>
+        <li>Filter <i>A2 Hard</i> und <i>Alle Schadstoffe</i>: Messwert = höchster KBI in H2 Hard der jeweiligen Stunde
+        </li>
+        <li>Filter <i>A2 Hard</i> und <i>PM<sub>2.5</sub></i>: Messwert = Messwert in H2 Hard der jeweiligen Stunde</li>
+      </ul>
+
+      <h3 id="data">Anleitung</h3>
+      <p>Die gesamten Visualisierungen können zum Einen nach den Schadstoffen (NO<sub>2</sub>, O<sub>3</sub> und
+        PM<sub>2.5</sub>) und zum Anderen nach deren gemessenem Standort gefiltert werden. Als Standard zeigt die Map
+        den aktuellen Kurzzeit-Belastungs-Index an den sechs Standorten (St. Johannsplatz, Feldbergstrasse, A2 Hard und
+        die drei Standorte in der Gundeldingerstrasse) an. Das Stacked Radial Area Chart zeigt als Standard die
+        Mittelwerte aller Standorte zusammen von 0:00-24:00 und die Heatmap zeigt jeder einzelne Messwert pro Stunde der
+        letzten vier Wochen (KBI-skaliert).</p>
+      <p>Es gibt nun drei Möglichkeiten, mit der Visualisierung zu spielen:</p>
+      <ul>
+        <li>Map: Beim Drücken auf einen Standort wird im Stacked Radial Area Chart und in der Heatmap nur die Daten der
+          angeklickten Messstation angezeigt. Die angeklickte Messstation inklusive Koordinaten werden oberhalb des
+          Stacked Area Chart angezeigt. Beim Drücken auf die gesamte Karte werden wiederum alle Messstandorte
+          berücksichtigt.</li>
+        <li>Stacked Radial Area Chart: Beim Drücken auf einen Ring des Stacked Radial Area Chart wird in der Map der
+          aktuelle Feinstaub-Belastungs-Index und ind der Heatmap die Daten für den angeklickten Schadstoff angezeigt.
+        </li>
+        <li>Auswahlliste: In der Auswahlliste unter der Heatmap kann die Anzeige der Daten ebenfalls nach
+          NO<sub>2</sub>, O<sub>3</sub> und PM<sub>2.5</sub> oder allen Schadstoffen gefiltert werden. Die
+          Visualisierungen werden entsprechend der angeklickten Variante verändert.</li>
+      </ul>
+
+      <h3 id="data">Farben</h3>
+      <p>Jeder Schadstoff ist mit einer Farbe verbunden, welche das Layout der Visualisierung bestimmt. Alle Schadstoffe
+        haben die Farbe <span style="color: rgb(66, 146, 198);">blau</span>, NO<sub>2</sub> <span
+          style="color: rgb(65, 171, 93);">grün</span> , O<sub>3</sub> <span
+          style="color: rgb(128, 125, 186);">violett</span> und PM<sub>2.5</sub> <span
+          style="color: rgb(239, 59, 44);">orange</span>. </p>
+
+      <h3 id="data">Daten</h3>
+      <p>Die App verwendet die beiden Datensätze <a
+          href="https://data.bs.ch/explore/dataset/100093/information/?sort=timestamp">Luftqualität</a> und <a
+          href="https://data.bs.ch/explore/dataset/100178/information/?sort=timestamp">Luftqualität
+          Vergleichsmessungen</a>. Die Daten werden vom Kanton Basel-Stadt in Rahmen des Projekts <i>Smarte Strasse</i>
+        auf ihrem <a href="https://data.bs.ch/pages/home/">Datenportal</a> zur Verfügung gestellt. Die App greift über
+        eine API-Schnittstelle auf die Daten zu und lädt die alle Daten der letzten sechs Monate. Das Projekt <i>Smarte
+          Strasse</i> testet kosteneffizeinte Mikrosensoren auf ihre Genauigkeit und Zuverlässigkeit. Der installierte
+        Sensor vom Typ "Nubo" der Firma Sensirion AG ist in der Lage, die Konzentration verschiedener Schadstoffe in der
+        Luft in Echtzeit zu ermitteln. Gemessen werden die Gehalte der Gase Stickstoffdioxid (NO<sub>2</sub>) und Ozon
+        (O<sub>3</sub>), sowie die feinere Fraktion des Feinstaubs PM<sub>2.5</sub>. </p>
+
+      <h3 id="data">Schadstoffe</h3>
+      <p>Für die Messung der Luftqualität werden die Schadstoffe NO<sub>2</sub>, O<sub>3</sub> und PM<sub>2.5</sub>
+        gemessen. Das Swiss Tropical and Health Institute zeigt in einer <a
+          href="https://www.swisstph.ch/de/projects/ludok/healtheffects/">interaktiven App</a> die Auswirkungen der
+        Luftverschmutzung auf die Gesundheit. Es kann dort zwischen Kurz- und Langzeit sowie den entsprechenden
+        Schadstoffen ausgewählt werden.</p>
+      <h4 id="data">NO<sub>2</sub></h4>
+      <p>Stickstoffdioxid (NO<sub>2</sub>) entsteht beim Verbrennen von Brenn- und Treibstoffen, insbesondere bei hohen
+        Verbrennungstemperaturen. Hauptquelle von Stickstoffdioxidausstösse ist der Strassenverkehr. Sticko ist eine
+        wichtige Vorläufersubstanz für die Bildung von sauren Niederschlägen, sekundärem Feinstaub und - zusammen mit
+        flüchtigen organischen Verbindungen (VBO) - von Sommersmog (<a
+          href="https://www.umweltberichtbeiderbasel.bs.ch/indikatoren/indikatoren-uebersicht/11-luft/stickstoffdioxid-immissionen.html">Quelle</a>).
+      </p>
+
+      <h4 id="data">O<sub>3</sub></h4>
+      <p>Ozon (O<sub>3</sub>) kommt in kleinsten Mengen in unserer Atemluft vor. Bodennah wird Ozon unter Einwirkung des
+        Sonnenlichts aus den Vorläufersubstanzen flüchtige organische Verbindungen (VOC) und Stickstoffdioxid
+        (NO<sub>2</sub>) gebildet. Je mehr VOC und NO<sub>2</sub> in der Luft ist und je stärker die Sonne scheint,
+        desto mehr Ozon wird gebildet. Aufgrund des Einflusses der industrialisierten Region rund um Mailand und den
+        klimatischen Bedingungen (viel Sonne, wenig Wind), ist die Ozonbelastung südlich der Alpen höher als im
+        Schweizer Mittelland. Zahlreiche Studien über Ozonbelastungen belegen den Zusammenhang zwischen der
+        Ozonkonzenration und Atemwegserkrankungen und Herz-Kreislaufkrankheiten (<a
+          href="https://ozon-info.ch/">Quelle</a>).</p>
+
+      <h4 id="data">PM<sub>2.5</sub></h4>
+      <p>Feinstaub (PM<sub>2.5</sub>) ist ein Gemisch aus kleinsten Staubteilchen von weniger als 2.5 Mikrometer.
+        Feinstaub ist ein komplexes Gemisch und besteht aus direkt emittierten, primären Partikeln und bildet sekundäre
+        Partikel aus Vorläuferstoffen. Die primären Partikel stammen aus:</p>
+      <ul>
+        <li>Verbrennungsprozessen von Motoren und Holzheizungen</li>
+        <li>mechanischem Abrieb von Reifen, Bremsen oder Strassenbelag</li>
+        <li>Aufwirbelung</li>
+        <li>natürlichen Quellen wie Vulkane, Erosion oder Salz aus Meeresgischt.</li>
+      </ul>
+
+      <p>Die sekundären Partikel bilden sich erst in der Luft aus gasförmigen Vorläuferschadstoffen wie Schwefeldioxi,
+        Stickoxide, Ammoniak oder flüchtige organische Verbindungen (VOC). Besonders im Winter leiden Städte und
+        verkehrsnahe Gebiete unter zu hohen Feinstaubbelastungen.</p>
+      <p>Feinstaub wird in drei verschiedene grössen eingeteilt (<a href="https://feinstaub.ch/">Quelle</a>):</p>
+      <ul>
+        <li>ultrafeine Partikel (PM<sub>0.1</sub>)</li>
+        <li>feine Partikel (PM<sub>2.5</sub>)</li>
+        <li>grobe Partikel (PM<sub>10</sub>)</li>
+      </ul>
+
+      <h3 id="data">Kurzzeit-Belastungs-Index</h3>
+      <p>Der Kurzzeit-Belastungs-Index, kurz KBI, ist ein gesamtschweizerisches Index-System zur vereinfachten
+        Kommunikation der Kurzzeit-Luftbelastung unter Berücksichtigung der gesundheitlichen Auswirkungen. Der KBI wird
+        aus kontinuierlichen Messdaten für Ozon (O<sub>3</sub>), Stickstoffdioxid (NO<sub>2</sub>), und Feinstaub
+        (PM<sub>10</sub>) berechnet. Für jeden Schadstoff pro Messstation wird der Index anhand des Beurteilungsrasters
+        (siehe Tabelle unten) berechnet. Als Gesamt-Index wird <b>der Höchste</b> der bestimmten Indices dargestellt.
+      </p>
+      <p><b>Wichtig:</b> Für die Berechnung des KBI wird in dieser App der Feinstaub PM<sub>2.5</sub> verwendet.
+        Allgemein gilt, dass PM<sub>2.5</sub> rund zwei Drittel von PM<sub>10</sub> ausmacht. Aus diesem Grund wird für
+        die Berechnung des KBI zwei Drittel der Grenzwerte von PM<sub>10</sub> verwendet (siehe Tabelle unten). Dies
+        geschieht in Absprache mit dem Lufthyghieneamt beider Basel. Das offizielle Dokument der schweizerischen
+        Gesellschaft der Lufthygiene-Fachleute (Cercl Air) kann <a
+          href="https://cerclair.ch/assets/pdf/27a_2020_12_23_D_Kurzzeit_Luftbelastungs-Index.pdf">hier</a> eingesehen
+        werden.
+      <p><b>Achtung:</b>In dieser Visualisierung wird nur auf die Kurzzeitbelastung eingegangen. Die
+        Immissionsgrenzwerte für einen längeren Zeitraum weichen sehr stark vom KBI ab.</p>
+
+
+      <table>
+        <tr>
+          <th>KBI</th>
+          <th>Belastung</th>
+          <th>O<sub>3</sub><br>μg/m3</th>
+          <th>NO<sub>2</sub><br>μg/m3</th>
+          <th>PM<sub>10</sub><br>μg/m3</th>
+          <th>PM<sub>2.5</sub><br>μg/m3</th>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>sehr hoch</td>
+          <td>> 240</td>
+          <td>> 160</td>
+          <td>> 100</td>
+          <td>> 66</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>hoch</td>
+          <td>181 - 240</td>
+          <td>121 - 160</td>
+          <td>76 - 100</td>
+          <td>51 - 66</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>erheblich</td>
+          <td>136 - 180</td>
+          <td>91 - 120</td>
+          <td>57 - 75</td>
+          <td>38 - 50</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>deutlich</td>
+          <td>121 - 135</td>
+          <td>81 - 90</td>
+          <td>51 - 56</td>
+          <td>34 - 37</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>mässig</td>
+          <td>61 - 120</td>
+          <td>41 - 80</td>
+          <td>26 - 50</td>
+          <td>17 - 33</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>gering</td>
+          <td>0 - 60</td>
+          <td>0 - 40</td>
+          <td>0 - 25</td>
+          <td>0 - 16</td>
+        </tr>
+
+      </table>
+
+
+
+      <div id="interpretation"></div>
+      <h2 id="data">Interpretation</h2>
+      <p>Da die Visualisierung auf Grundlage von aktuellen Daten der letzten sechs Monate basiert, bezieht sich die
+        Interpretation der
+        Visualisierung auf die Daten Stand 30.05.2022. Aufgrund der sich stetig ändernden Belastungen wird die
+        Interpretation der Map ausgelassen.</p>
+      <p>Das Stacked Radial Area Chart verdeutlicht, dass die drei Schadstoffemmissionen zur Hauptverkehrszeit am Morgen
+        und am Abend am Höchsten sind. Morgens fällt der Peak höher aus als Abends. Eine mögliche Erklärung dafür liegt
+        in der Annahme, dass am Morgen die meisten Leute zur gleichen Zeit zur Arbeit fahren, während sich am Abend die
+        Menge auf mehrere Stunden verteilt. Der Schadstoff NO<sub>2</sub> zeigt dabei die grössten Ausschläge. Wie bereits in der Dokumentation der Schadstoffe erkärt, entsteht NO<sub>2</sub> hauptsächlich bei Verbrennen von Brenn- und Treibstoffen. Diese Verbrennung findet somit zur Hauptverkerhszeit statt. </p>
+      <p>In der Hetamap ist dabei ersichtlich, dass die Emmissionswerte nie über den KBI-Index von 3 (deutliche Belastung) steigt. Diese Erkenntnis </p>
+      <p>Interpretation der KBI-Werte anhand eines Beispieltages</p>
+
+      <div id="uberdieseapp"></div>
+      <h2 id="data">Über diese App</h2>
+      <p>Diese App wurde im Rahmen der Mastervorlesung <i>Durchführung eines Open Data Projekts</i> der Forschungsstelle
+        <i>Digitale Nachhaltigkeit</i> an der Universität Bern programmiert.
+      </p>
+      <p>Ein herzliches Vergelt's Gott geht an dieser Stelle an Boris Djakovic der Fachstelle für Open Government Data
+        des Kantons Basel-Stadt. Er begleitete die Entwicklung der App und stand als Data Coach beratend zur Seite. Für
+        die Visualisierung wurde ein Code-Snipped von <a href="https://scottt.ch/">Scott Cheng </a>verwendet.</p>
+      <p>Der Source-Code ist auf <a href="">Github</a> frei zugänglich.</p>
+      <p><b>Andy Ritz</b><br>Student MSc Business Administration, Universität Bern<br><a
+          href="mailto:andy.ritz@students.unibe.ch"><img src="img/iconMail.png" width="24px" height="20px"></a></p>
+
+
+
+    </div>
+  </section>
+  <footer>
+    <div class="content">
+      <p>Copyright © 2022 Andy Ritz<br>Lizenziert unter der <a href="https://www.gnu.org/licenses/gpl-3.0.html">General
+          Public License v3</a></p>
+    </div>
+  </footer>
+
+  <script src="https://d3js.org/d3.v2.js"></script>
+  <script src="lib/colorbrewer.js"></script>
+
+  <script src="https://d3js.org/d3-array.v1.min.js" rel="external nofollow"></script>
+  <script src="https://d3js.org/d3-geo.v1.min.js" rel="external nofollow"></script>
+
+  <script src="air-vis.js"></script>
+
+</body>
+
+</html>
