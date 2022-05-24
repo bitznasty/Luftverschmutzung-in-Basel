@@ -1,6 +1,5 @@
 # Luftverschmutzung-in-Basel
-Die App dient zur Visualisierung der Luftverschmutzung in Basel (CH). Die App bildet drei verschiedene Visualisierungen ab: Map, Stacked Radial Area Chart und eine Heatmap.
-Die gesamten Visualisierungen können zum Einen nach den Schadstoffen (NO2, O3 und PM2.5) und zum Anderen nach deren gemessenem Standort gefiltert werden. Als Standard zeigt die Map den aktuellen Kurzzeit-Belastungs-Index an den sechs Standorten (St. Johannsplatz, Feldbergstrasse, A2 Hard und die drei Standorte in der Gundeldingerstrasse) an. Das Stacked Radial Area Chart zeigt als Standard die Mittelwerte aller Standorte zusammen von 0:00-24:00 und die Heatmap zeigt jeder einzelne Messwert pro Stunde der letzten vier Wochen (KBI-skaliert).
+Diese App visaulisiert die Kurzzeit-Luftverschmutzung der Stadt Basel über die letzten sechs Monate. Dabei werden die Daten als Map, Stacked Radial Area Chart und Heatmap dargestellt. Die gesamten Visualisierungen können zum Einen nach den Schadstoffen (NO2, O3 und PM2.5) und zum Anderen nach deren gemessenem Standort gefiltert werden. Als Standard zeigt die Map den aktuellen Kurzzeit-Belastungs-Index an den sechs Standorten (St. Johannsplatz, Feldbergstrasse, A2 Hard und die drei Standorte in der Gundeldingerstrasse) an. Das Stacked Radial Area Chart zeigt als Standard die Mittelwerte aller Standorte zusammen von 0:00-24:00 und die Heatmap zeigt jeder einzelne Messwert pro Stunde der letzten vier Wochen (KBI-skaliert).
 
 Es gibt nun drei Möglichkeiten, mit der Visualisierung zu spielen:
 
