@@ -2,8 +2,9 @@
     display: block;
 }
 
-.fact{
-    padding: 5px;;
+.fact {
+    padding: 5px;
+    ;
     border-style: solid;
     border-width: 1px;
 }
@@ -62,7 +63,8 @@ body.pollutant-all a {
 }
 
 body.pollutant-all .fact {
-    padding: 5px;;
+    padding: 5px;
+    ;
     border-style: solid;
     border-width: 1px;
     border-color: #4292c6;
@@ -515,7 +517,7 @@ header .content p.author {
 }
 
 #write-up .content h3 {
-    font-size: 22px;
+    font-size: 24px;
     margin-top: 25px;
     margin-bottom: 15px;
     border-left-width: 3px;
@@ -605,28 +607,37 @@ footer .content p {
 }
 
 .navbar {
-background-color: white;
+    background-color: white;
 }
 
-#dokumentation, #interpretation, #uberdieseapp, #visual, #shortFacts {
+#dokumentation,
+#interpretation,
+#uberdieseapp,
+#visual,
+#shortFacts {
     padding-top: 30px;
 }
 
 #station-name2 {
     margin-bottom: 36px;
 }
+
 #station-name {
     margin-bottom: 0px;
 }
+
 #station-name3 {
     margin-top: 10px;
 }
-table, th, td {
+
+table,
+th,
+td {
     border: 1px solid #525252;
     text-align: center;
     border-collapse: collapse;
 }
-    
+
 .bildunterschrift {
     text-align: end;
     padding-bottom: 20px;
