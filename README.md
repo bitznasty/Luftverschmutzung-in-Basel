@@ -8,5 +8,3 @@ Map: Beim Drücken auf einen Standort wird im Stacked Radial Area Chart und in d
 Stacked Radial Area Chart: Beim Drücken auf einen Ring des Stacked Radial Area Chart wird in der Map der aktuelle Feinstaub-Belastungs-Index und ind der Heatmap die Daten für den angeklickten Schadstoff angezeigt.
 
 Auswahlliste: In der Auswahlliste unter der Heatmap kann die Anzeige der Daten ebenfalls nach NO2, O3 und PM2.5 oder allen Schadstoffen gefiltert werden. Die Visualisierungen werden entsprechend der angeklickten Variante verändert.
-
-https://ar17z098.opendata.iwi.unibe.ch/
