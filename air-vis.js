@@ -591,13 +591,13 @@ var vis = function (data) {
           break;
         case 'no2':
           d3.select('#station-name2').text('Stickstoffdioxid-Belastungs-Index');
-          document.getElementById("radialLegend1").style.fill = "rgb(116, 196, 118)";
+          document.getElementById("radialLegend3").style.fill = "rgb(116, 196, 118)";
           document.getElementById("radialLegend2").style.fill = "#737373";
-          document.getElementById("radialLegend3").style.fill = "#737373";
-          document.getElementById("halbkreis0").style.stroke = "rgb(116, 196, 118)";
-          document.getElementById("halbkreis1").style.stroke = "rgb(116, 196, 118)";
-          document.getElementById("halbkreis2").style.stroke = "#737373";
-          document.getElementById("halbkreis3").style.stroke = "#737373";
+          document.getElementById("radialLegend1").style.fill = "#737373";
+          document.getElementById("halbkreis2").style.stroke = "rgb(116, 196, 118)";
+          document.getElementById("halbkreis3").style.stroke = "rgb(116, 196, 118)";
+          document.getElementById("halbkreis0").style.stroke = "#737373";
+          document.getElementById("halbkreis1").style.stroke = "#737373";
           break;
         case 'o3':
           d3.select('#station-name2').text('Ozon-Belastungs-Index');
@@ -611,13 +611,13 @@ var vis = function (data) {
           break;
         case 'pm2_5':
           d3.select('#station-name2').text('Feinstaub-Belastungs-Index');
-          document.getElementById("radialLegend1").style.fill = "#737373";
+          document.getElementById("radialLegend3").style.fill = "#737373";
           document.getElementById("radialLegend2").style.fill = "#737373";
-          document.getElementById("radialLegend3").style.fill = "rgb(251, 106, 74)";
-          document.getElementById("halbkreis0").style.stroke = "#737373";
-          document.getElementById("halbkreis1").style.stroke = "#737373";
-          document.getElementById("halbkreis2").style.stroke = "rgb(251, 106, 74)";
-          document.getElementById("halbkreis3").style.stroke = "rgb(251, 106, 74)";
+          document.getElementById("radialLegend1").style.fill = "rgb(251, 106, 74)";
+          document.getElementById("halbkreis2").style.stroke = "#737373";
+          document.getElementById("halbkreis3").style.stroke = "#737373";
+          document.getElementById("halbkreis0").style.stroke = "rgb(251, 106, 74)";
+          document.getElementById("halbkreis1").style.stroke = "rgb(251, 106, 74)";
           break;
       }
     };

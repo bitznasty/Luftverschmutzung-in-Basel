@@ -98,7 +98,9 @@
         Ansonsten wird entweder bei <i>Alle Messstandorte</i> als Messwert der Durchschnitt des jeweiligen Schadstoffs
         aller Standorte oder bei einem aktiven Filter einer Station
         der jeweilige Messwert angezeigt. Messwerte, welche keinen Wert
-        haben, werden schwarz dargestellt. Beispiele:</p>
+        haben, werden schwarz dargestellt (Messfehler).</p>
+        <p>Beispiele:</p>
+        
       <ul>
         <li>Filter <i>Alle Messstandorte</i> und <i>Alle Schadstoffe</i>: Messwert = höchster KBI der jeweiligen Stunde
           aller Messstandorte</li>
@@ -114,7 +116,7 @@
         Kommunikation der Kurzzeit-Luftbelastung unter Berücksichtigung der gesundheitlichen Auswirkungen. Der KBI wird
         aus kontinuierlichen Messdaten für Ozon (O<sub>3</sub>), Stickstoffdioxid (NO<sub>2</sub>), und Feinstaub
         (PM<sub>10</sub>) berechnet. Für jeden Schadstoff pro Messstation wird der Index anhand des Beurteilungsrasters
-        (siehe Tabelle unten) berechnet. Als Gesamt-Index wird <b>der Höchste</b> der bestimmten Indices dargestellt.
+        (siehe Tabelle unten) berechnet. Als Gesamt-Index wird <b>der Höchste</b> der gemessenen Indices dargestellt.
       </p>
       <p><b>Wichtig:</b> Für die Berechnung des KBI wird in dieser App der Feinstaub PM<sub>2.5</sub> verwendet.
         Allgemein gilt, dass PM<sub>2.5</sub> rund zwei Drittel von PM<sub>10</sub> ausmacht. Aus diesem Grund wird für
@@ -188,14 +190,14 @@
 
       <h3 id="data">Schadstoffe</h3>
       <p>Für die Messung der Luftqualität werden die Schadstoffe NO<sub>2</sub>, O<sub>3</sub> und PM<sub>2.5</sub>
-        gemessen. Im Folgendem werden diese genauer beschrieben. Für ausführlichere Angaben bezüglich Auswirkungen der
-        Luftverschmutzung auf die Gesundheit hat das Swiss Tropical and Health Institute eine <a
+        gemessen. Im Folgenden werden diese genauer beschrieben. Für ausführlichere Angaben bezüglich Auswirkungen der
+        Luftverschmutzung auf die Gesundheit hat das Swiss Tropical and Public Health Institute eine <a
           href="https://www.swisstph.ch/de/projects/ludok/healtheffects/">interaktive App</a> entwickelt. Dort kann
         zwischen Kurz- und Langzeit sowie den entsprechenden
         Schadstoffen ausgewählt werden.</p>
       <h4 id="data">NO<sub>2</sub></h4>
       <p>Stickstoffdioxid (NO<sub>2</sub>) entsteht beim Verbrennen von Brenn- und Treibstoffen, insbesondere bei hohen
-        Verbrennungstemperaturen. Hauptquelle von Stickstoffdioxidausstösse ist der Strassenverkehr. Stickstoffdioxid
+        Verbrennungstemperaturen. Hauptquelle von Stickstoffdioxidausstössen ist der Strassenverkehr. Stickstoffdioxid
         ist eine
         wichtige Vorläufersubstanz für die Bildung von sauren Niederschlägen, sekundärem Feinstaub und - zusammen mit
         flüchtigen organischen Verbindungen (VOC) - von Sommersmog (<a
@@ -209,7 +211,7 @@
         desto mehr Ozon wird gebildet. Aufgrund des Einflusses der industrialisierten Region rund um Mailand und den
         klimatischen Bedingungen (viel Sonne, wenig Wind), ist die Ozonbelastung südlich der Alpen höher als im
         Schweizer Mittelland. Zahlreiche Studien über Ozonbelastungen belegen den Zusammenhang zwischen der
-        Ozonkonzenration und Atemwegserkrankungen und Herz-Kreislaufkrankheiten (<a
+        Ozonkonzentration und Atemwegserkrankungen und Herz-Kreislaufkrankheiten (<a
           href="https://ozon-info.ch/">Quelle</a>).</p>
 
       <h4 id="data">PM<sub>2.5</sub></h4>
@@ -233,17 +235,17 @@
       </ul>
 
       <h3 id="data">Anleitung</h3>
-      <p>Die gesamten Visualisierungen können zum Einen nach den Schadstoffen (NO<sub>2</sub>, O<sub>3</sub> und
-        PM<sub>2.5</sub>) und zum Anderen nach deren gemessenem Standort gefiltert werden. Als Standard zeigt die Map
-        den aktuellen Kurzzeit-Belastungs-Index an den sechs Standorten (St. Johannsplatz, Feldbergstrasse, A2 Hard und
+      <p>Die gesamten Visualisierungen können zum einen nach den Schadstoffen (NO<sub>2</sub>, O<sub>3</sub> und
+        PM<sub>2.5</sub>) und zum anderen nach deren gemessenem Standort gefiltert werden. Als Standard zeigt die Map
+        den aktuellen Kurzzeit-Belastungs-Index (KBI) an den sechs Standorten (St. Johannsplatz, Feldbergstrasse, A2 Hard und
         die drei Standorte in der Gundeldingerstrasse) an. Das Stacked Radial Area Chart zeigt als Standard die
-        Mittelwerte aller Standorte zusammen von 0:00-24:00 und die Heatmap zeigt jeder einzelne Messwert pro Stunde der
+        Mittelwerte aller Standorte zusammen von 0:00-24:00 und die Heatmap visualisiert jeden einzelnen Messwert pro Stunde der
         letzten vier Wochen (KBI-skaliert).</p>
       <p>Es gibt nun drei Möglichkeiten, mit der Visualisierung zu spielen:</p>
       <ul>
-        <li>Map: Beim Drücken auf einen Standort wird im Stacked Radial Area Chart und in der Heatmap nur die Daten der
+        <li>Map: Beim Drücken auf einen Standort wird im Stacked Radial Area Chart und in der Heatmap die Daten der
           angeklickten Messstation angezeigt. Die angeklickte Messstation inklusive Koordinaten werden oberhalb des
-          Stacked Area Chart angezeigt. Beim Drücken auf die gesamte Karte werden wiederum alle Messstandorte
+          Stacked Area Charts angezeigt. Beim Drücken auf die gesamte Karte werden wiederum alle Messstandorte
           berücksichtigt.</li>
         <li>Stacked Radial Area Chart: Beim Drücken auf einen Ring des Stacked Radial Area Chart wird in der Map der
           aktuelle Feinstaub-Belastungs-Index und in der Heatmap die Daten für den angeklickten Schadstoff angezeigt.
@@ -295,9 +297,9 @@
         und auf die Nacht hin wieder ab. Dieses Verhalten geht vor allem auf das Sonnenlicht zurück. Je stärker
         die Sonne scheint, desto mehr Ozon wird gebildet. Die Immissionen des Schadstoffs PM<sub>2.5</sub> unterliegen
         praktisch keinen Schwankungen über den Tag. Ihre Immissionswerte sind konstant über den Tag verteilt.</p>
-      <p>Interessant ist Aufschlüsselung nach den Standorten. So ist zu erkennen, dass an der Autobahn A2 Hard die
-        Stickstoffdioxid-Immissionen während den Hauptverkehrszeiten fast immer zwischen mässig und deutlich liegen, wo
-        hingegen die Immissionen an der Gundeldingerstrasse auch zu Hauptverkehrszeiten fast nie über gering gehen. Dies
+      <p>Interessant ist die Aufschlüsselung nach den Standorten. So ist zu erkennen, dass an der Autobahn A2 Hard die
+        Stickstoffdioxid-Immissionen während den Hauptverkehrszeiten fast immer zwischen mässig (KBI=2) und deutlich (KBI=3) liegen, wo
+        hingegen die Immissionen an der Gundeldingerstrasse auch zu Hauptverkehrszeiten fast nie über gering (KBI=1) gehen. Dies
         zeigt den starken Zusammenhang, welcher der Verkehr auf die Luftverschmutzung hat. </p>
       <p>In der Hetamap ist ersichtlich, dass die Immissionswerte nie über den KBI-Index von 3 (deutliche
         Belastung) steigt. Diese doch erfreuliche Erkenntnis ist jedoch mit Vorsicht zu geniessen. Wie im Kapitel KBI
@@ -317,7 +319,7 @@
       <p>Bei der Betrachtung der Langzeitbelastung ist beim Feinstaub zu erkennen, dass die Werte über die Zeit gesunken
         sind und nun nah bzw. unter dem
         Grenzwert liegen. Das Gleiche gilt für Stickstoffdioxid, wobei hier nur die Messstationen in der Stadt und nahe
-        dem Verkehr noch über dem Grendwert liegen. Ein ganz anderes Bild zeigt der Verlauf der Ozonbelastung. Diese hat
+        dem Verkehr noch über dem Grenzwert liegen. Ein ganz anderes Bild zeigt der Verlauf der Ozonbelastung. Diese hat
         sich über die Jahre immer wieder mit starken Ausreissern ausgezeichnet. Es ist keine Abnahme der Belastung über
         die Zeit zu erkennen. Bei Feinstaub und Stickstoffdioxid sind die Messwerte in der Stadt höher als auf dem Land.
         Beim Ozon ist das Gegenteil zu erkennen. Dieser Unterschied ist auf die im Kapitel O<sub>3</sub> beschriebene
@@ -332,7 +334,7 @@
         von kurzfristig erhöhten Schadstoffbelastungen der Luft allerdings weiterhin ein relevantes Problem dar.
         Besonders
         betroffen sind empfindlich reagierende Personen, wie Kinder, ältere und kranke Menschen. Deshalb ist es umso
-        wichtiger, die Kurzzeit-Luftbelastung zu überwachen und verringern. Die Kantone Basel-Stadt und Basel-Landschaft
+        wichtiger, die Kurzzeit-Luftbelastung zu überwachen und zu verringern. Die Kantone Basel-Stadt und Basel-Landschaft
         haben dazu das
         Lufthyghieneamt gebildet. Es vollzieht die Vorschriften der Luftreinhalteverordnung, indem es Auflagen für
         industrielle und gewerbliche Anlagen festlegt und diese durch Betriebskontrollen überprüft. Bei
@@ -342,7 +344,7 @@
       <h2 id="data">Short Facts Luftverschmutzung</h2>
       <p class="fact">Luftverschmutzung verursacht in der Schweiz laut Studien jährlich externe, nicht vom Verursacher
         gedeckte Folgekosten in Milliardenhöhe. <a href="https://www.are.admin.ch/kosten-nutzen">Link</a></p>
-      <p class="fact">Wegen Luftschadstoff bedingten Atemwegs- und Herz-Kreislauferkrankungen werden in der Schweiz
+      <p class="fact">Wegen Luftschadstoffen bedingte Atemwegs- und Herz-Kreislauferkrankungen werden in der Schweiz
         jährlich ca. 14'000 Tage im Spital verbracht. <a
           href="https://www.bafu.admin.ch/bafu/de/home/themen/luft/fachinformationen/auswirkungen-der-luftverschmutzung/auswirkungen-der-luftverschmutzung-auf-die-gesundheit.html">Link</a>
       </p>
