@@ -86,12 +86,12 @@
       <h4 id="data">Stacked Radial Area Chart</h4>
       <p>Der Stacked Radial Area Chart stellt die gesamten Messwerte auf den Tag aufgeschlüsselt dar (letzten sechs
         Monate). Dieser Graph dient
-        zur Darstellung der längerfristigen Entwicklung der Messwerte über den vollen Zeitrahmen. Es werden die
+        zur Darstellung der längerfristigen Entwicklung der Messwerte über den ganzen Zeitrahmen. Es werden die
         absoluten Werte dargestellt. Jeder Ring steht für einen Schadstoff. Je weiter der Ring nach aussen verschoben
         wird, desto grösser ist der Wert des Schadstoffs zu dieser Uhrzeit.</p>
 
       <h4 id="data">Heatmap</h4>
-      <p>Die Heatmap stellt die Messwerte der letzten vier Wochen je Stunde dar. Diese Visualisierung dient zur
+      <p>Die Heatmap stellt die stündlichen Messwerte der letzten vier Wochen dar. Diese Visualisierung dient zur
         Darstellung der einzelnen Messwerte. Die Farbe der jeweiligen Tiles sind nach dem Kurzzeit-Belastungs-Index
         skaliert. Wird mit der Maus über ein Tile gefahren, so wird das Datum, die Uhrzeit und der Messwert in einem
         Tooltip angezeigt. Ist der Filter <i>Alle Schadstoffe</i> aktiv, so wird der KBI als Messwert angezeigt.
@@ -99,8 +99,8 @@
         aller Standorte oder bei einem aktiven Filter einer Station
         der jeweilige Messwert angezeigt. Messwerte, welche keinen Wert
         haben, werden schwarz dargestellt (Messfehler).</p>
-        <p>Beispiele:</p>
-        
+      <p>Beispiele:</p>
+
       <ul>
         <li>Filter <i>Alle Messstandorte</i> und <i>Alle Schadstoffe</i>: Messwert = höchster KBI der jeweiligen Stunde
           aller Messstandorte</li>
@@ -206,8 +206,8 @@
 
       <h4 id="data">O<sub>3</sub></h4>
       <p>Ozon (O<sub>3</sub>) kommt in kleinsten Mengen in unserer Atemluft vor. Bodennah wird Ozon unter Einwirkung des
-        Sonnenlichts aus den Vorläufersubstanzen flüchtige organische Verbindungen (VOC) und Stickstoffdioxid
-        (NO<sub>2</sub>) gebildet. Je mehr VOC und NO<sub>2</sub> in der Luft ist und je stärker die Sonne scheint,
+        Sonnenlichts aus den Vorläufersubstanzen, flüchtige organische Verbindungen (VOC) und Stickstoffdioxid
+        (NO<sub>2</sub>), gebildet. Je mehr VOC und NO<sub>2</sub> in der Luft ist und je stärker die Sonne scheint,
         desto mehr Ozon wird gebildet. Aufgrund des Einflusses der industrialisierten Region rund um Mailand und den
         klimatischen Bedingungen (viel Sonne, wenig Wind), ist die Ozonbelastung südlich der Alpen höher als im
         Schweizer Mittelland. Zahlreiche Studien über Ozonbelastungen belegen den Zusammenhang zwischen der
@@ -237,14 +237,16 @@
       <h3 id="data">Anleitung</h3>
       <p>Die gesamten Visualisierungen können zum einen nach den Schadstoffen (NO<sub>2</sub>, O<sub>3</sub> und
         PM<sub>2.5</sub>) und zum anderen nach deren gemessenem Standort gefiltert werden. Als Standard zeigt die Map
-        den aktuellen Kurzzeit-Belastungs-Index (KBI) an den sechs Standorten (St. Johannsplatz, Feldbergstrasse, A2 Hard und
+        den aktuellen Kurzzeit-Belastungs-Index (KBI) an den sechs Standorten (St. Johannsplatz, Feldbergstrasse, A2
+        Hard und
         die drei Standorte in der Gundeldingerstrasse) an. Das Stacked Radial Area Chart zeigt als Standard die
-        Mittelwerte aller Standorte zusammen von 0:00-24:00 und die Heatmap visualisiert jeden einzelnen Messwert pro Stunde der
+        Mittelwerte aller Standorte zusammen von 0:00-24:00 und die Heatmap visualisiert jeden einzelnen Messwert pro
+        Stunde der
         letzten vier Wochen (KBI-skaliert).</p>
       <p>Es gibt nun drei Möglichkeiten, mit der Visualisierung zu spielen:</p>
       <ul>
-        <li>Map: Beim Drücken auf einen Standort wird im Stacked Radial Area Chart und in der Heatmap die Daten der
-          angeklickten Messstation angezeigt. Die angeklickte Messstation inklusive Koordinaten werden oberhalb des
+        <li>Map: Beim Drücken auf einen Standort werden im Stacked Radial Area Chart und in der Heatmap die Daten der
+          angeklickten Messstation angezeigt. Die angeklickte Messstation inklusive Koordinaten wird oberhalb des
           Stacked Area Charts angezeigt. Beim Drücken auf die gesamte Karte werden wiederum alle Messstandorte
           berücksichtigt.</li>
         <li>Stacked Radial Area Chart: Beim Drücken auf einen Ring des Stacked Radial Area Chart wird in der Map der
@@ -275,10 +277,10 @@
         Sensoren zur Detektion freier Parkplätze.</p>
 
       <h3 id="data">Farben</h3>
-      <p>Jeder Schadstoff ist mit einer Farbe verbunden, welche das Layout der Visualisierung bestimmt. Alle Schadstoffe
-        haben die Farbe <span style="color: rgb(66, 146, 198);">blau</span>, NO<sub>2</sub><span
-          style="color: rgb(65, 171, 93);">grün</span> , O<sub>3</sub> <span
-          style="color: rgb(128, 125, 186);">violett</span> und PM<sub>2.5</sub> <span
+      <p>Jeder Schadstoff ist mit einer Farbe verbunden, welche das Layout der Visualisierung bestimmt. Die Schadstoffe
+        werden farblich folgendermassen aufgeteilt: Alle Schadstoffe <span
+          style="color: rgb(66, 146, 198);">blau</span>, NO<sub>2</sub><span style="color: rgb(65, 171, 93);">
+          grün</span> , O<sub>3</sub> <span style="color: rgb(128, 125, 186);">violett</span> und PM<sub>2.5</sub> <span
           style="color: rgb(239, 59, 44);">orange</span>. </p>
 
       <div id="interpretation"></div>
@@ -298,11 +300,12 @@
         die Sonne scheint, desto mehr Ozon wird gebildet. Die Immissionen des Schadstoffs PM<sub>2.5</sub> unterliegen
         praktisch keinen Schwankungen über den Tag. Ihre Immissionswerte sind konstant über den Tag verteilt.</p>
       <p>Interessant ist die Aufschlüsselung nach den Standorten. So ist zu erkennen, dass an der Autobahn A2 Hard die
-        Stickstoffdioxid-Immissionen während den Hauptverkehrszeiten fast immer zwischen mässig (KBI=2) und deutlich (KBI=3) liegen, wo
-        hingegen die Immissionen an der Gundeldingerstrasse auch zu Hauptverkehrszeiten fast nie über gering (KBI=1) gehen. Dies
+        Stickstoffdioxid-Immissionen während den Hauptverkehrszeiten fast immer zwischen einem KBI-Wert von 2 (mässige Belastung) und 3 (deutliche Belastung) liegen, wo
+        hingegen die Immissionen an der Gundeldingerstrasse auch zu Hauptverkehrszeiten fast nie über einen KBI-Wert von 1 (geringe Belastung)
+        gehen. Dies
         zeigt den starken Zusammenhang, welcher der Verkehr auf die Luftverschmutzung hat. </p>
-      <p>In der Hetamap ist ersichtlich, dass die Immissionswerte nie über den KBI-Index von 3 (deutliche
-        Belastung) steigt. Diese doch erfreuliche Erkenntnis ist jedoch mit Vorsicht zu geniessen. Wie im Kapitel KBI
+      <p>In der Heatmap ist ersichtlich, dass die Immissionswerte nie über den KBI-Index von 3 (deutliche
+        Belastung) steigt. Diese erfreuliche Erkenntnis ist mit Vorsicht zu geniessen. Wie im Kapitel KBI
         angetönt, wird bei der Luftverschmutzung zwischen Kurz- und Langzeitbelastung unterschieden. Die in dieser
         Visualisierung verwendete Kurzzeitbelastung hat
         viel höhere Grenzwerte als die Langzeitbelastung.
@@ -334,7 +337,8 @@
         von kurzfristig erhöhten Schadstoffbelastungen der Luft allerdings weiterhin ein relevantes Problem dar.
         Besonders
         betroffen sind empfindlich reagierende Personen, wie Kinder, ältere und kranke Menschen. Deshalb ist es umso
-        wichtiger, die Kurzzeit-Luftbelastung zu überwachen und zu verringern. Die Kantone Basel-Stadt und Basel-Landschaft
+        wichtiger, die Kurzzeit-Luftbelastung zu überwachen und zu verringern. Die Kantone Basel-Stadt und
+        Basel-Landschaft
         haben dazu das
         Lufthyghieneamt gebildet. Es vollzieht die Vorschriften der Luftreinhalteverordnung, indem es Auflagen für
         industrielle und gewerbliche Anlagen festlegt und diese durch Betriebskontrollen überprüft. Bei
@@ -372,7 +376,9 @@
       <p>Ein herzliches Vergelt's Gott geht an dieser Stelle an Boris Djakovic der Fachstelle für Open Government Data
         des Kantons Basel-Stadt. Er begleitete die Entwicklung der App und stand als Data Coach beratend zur Seite. Für
         die Visualisierung wurde ein Code-Snipped von <a href="https://scottt.ch/">Scott Cheng </a>verwendet.</p>
-        <p>Für die Programmierung der App wurde <a href="https://d3js.org/">D3.js</a>, <a href="https://getbootstrap.com/"> Bootstrap</a> und <a href="https://colorbrewer2.org/">Colorbrewer</a> verwendet.</p>
+      <p>Für die Programmierung der App wurde <a href="https://d3js.org/">D3.js</a>, <a
+          href="https://getbootstrap.com/"> Bootstrap</a> und <a href="https://colorbrewer2.org/">Colorbrewer</a>
+        verwendet.</p>
       <p>Der Source-Code ist auf <a href="https://github.com/bitznasty/Luftverschmutzung-in-Basel">Github</a> frei
         zugänglich.</p>
       <p><b>Andy Ritz</b><br>Student MSc Business Administration, Universität Bern<br><a
