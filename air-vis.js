@@ -989,7 +989,7 @@ var vis = function (data) {
         .attr('class', 'legend axis')
         .attr('transform', 'translate(0,' + axisHeight + ')');
       var yData = [];
-      yData = ["", "1", "", "", "", "", "", "", "2", "", "", "", "", "", "", "3", "", "", "", "", "", "", "4", "", "", "", "", "", "",];
+      yData = ["", "4", "", "", "", "", "", "", "3", "", "", "", "", "", "", "2", "", "", "", "", "", "", "1", "", "", "", "", "", "",];
       yAxis.selectAll('text.legend-element.axis-scale')
         .data(yData)
         .enter().append('text')
@@ -1250,7 +1250,7 @@ d3.csv('data/locations.csv', function (locations) {
 
       d3.select('#loading')
         .transition()
-        .duration(3000)
+        .duration(4000)
         .style('opacity', 0)
         .remove();
 
